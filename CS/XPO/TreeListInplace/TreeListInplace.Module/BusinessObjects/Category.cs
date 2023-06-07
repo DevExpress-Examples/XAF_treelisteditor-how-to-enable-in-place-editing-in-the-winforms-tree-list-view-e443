@@ -9,6 +9,7 @@ using DevExpress.Persistent.Validation;
 using System.ComponentModel;
 using DevExpress.Persistent.Base.General;
 using DevExpress.Data.Filtering;
+using dxTestSolution.Module.BusinessObjects;
 
 namespace WinSolution.Module {
     [NavigationItem]
@@ -26,18 +27,18 @@ namespace WinSolution.Module {
                 return name;
             }
             set {
-                SetPropertyValue("Name", ref name, value);
+                SetPropertyValue(nameof(Name), ref name, value);
             }
         }
-        private Person _person;
-        public Person Person {
+        private Contact _person;
+        public Contact Contact {
             get { return _person; }
-            set { SetPropertyValue("Person", ref _person, value); }
+            set { SetPropertyValue(nameof(Contact), ref _person, value); }
         }
         private bool _Active;
         public bool Active {
             get { return _Active; }
-            set { SetPropertyValue("Active", ref _Active, value); }
+            set { SetPropertyValue(nameof(Active), ref _Active, value); }
         }
         #region ITreeNode
         IBindingList ITreeNode.Children {

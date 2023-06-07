@@ -16,6 +16,7 @@ public class ApplicationBuilder : IDesignTimeApplicationFactory {
         var builder = WinApplication.CreateBuilder();
         builder.UseApplication<TreeListInplaceWindowsFormsApplication>();
         builder.Modules
+            .AddTreeListEditors()
             .Add<TreeListInplace.Module.TreeListInplaceModule>()
         	.Add<TreeListInplaceWinModule>();
         builder.ObjectSpaceProviders

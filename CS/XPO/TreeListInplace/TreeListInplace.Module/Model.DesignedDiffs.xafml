@@ -1,5 +1,9 @@
-﻿<?xml version="1.0" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="TreeListInplace">
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="22.2.6.0" IsNewNode="True" />
+  </SchemaModules>
   <Views>
+    <ListView Id="Category_ListView" AllowEdit="True" />
   </Views>
 </Application>

@@ -6,6 +6,7 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
 using WinSolution.Module;
+using dxTestSolution.Module.BusinessObjects;
 
 namespace TreeListInplace.Module.DatabaseUpdate;
 
@@ -16,20 +17,24 @@ public class Updater : ModuleUpdater {
     }
     public override void UpdateDatabaseAfterUpdateSchema() {
         base.UpdateDatabaseAfterUpdateSchema();
-        Person p1 = ObjectSpace.CreateObject<Person>();
-        p1.FirstName = "Person1";
-        Person p2 = ObjectSpace.CreateObject<Person>();
-        p2.FirstName = "Person2";
+        var cnt = ObjectSpace.GetObjectsCount(typeof(Contact), null);
+        if(cnt > 0) {
+            return;
+        }
+        Contact p1 = ObjectSpace.CreateObject<Contact>();
+        p1.FirstName = "Contact1";
+        Contact p2 = ObjectSpace.CreateObject<Contact>();
+        p2.FirstName = "Contact2";
         ProjectGroup pg = ObjectSpace.CreateObject<ProjectGroup>();
         pg.Name = "ProjectGroup1";
-        pg.Person = p1;
+        pg.Contact = p1;
         Project pr = ObjectSpace.CreateObject<Project>();
         pr.Name = "Project1";
-        pr.Person = p1;
+        pr.Contact = p1;
         pg.Projects.Add(pr);
         ProjectArea pa = ObjectSpace.CreateObject<ProjectArea>();
         pa.Name = "ProjectArea1";
-        pa.Person = p1;
+        pa.Contact = p1;
         pr.ProjectAreas.Add(pa);
 
         ObjectSpace.CommitChanges();
