@@ -6,10 +6,10 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [TreeListAppearanceControllerEx.cs](./CS/WinSolution.Module.Win/TreeListAppearanceControllerEx.cs) (VB: [TreeListAppearanceControllerEx.vb](./VB/WinSolution.Module.Win/TreeListAppearanceControllerEx.vb))
-* [TreeListInplaceEditViewController.cs](./CS/WinSolution.Module.Win/TreeListInplaceEditViewController.cs) (VB: [TreeListInplaceEditViewController.vb](./VB/WinSolution.Module.Win/TreeListInplaceEditViewController.vb))
+* [TreeListAppearanceControllerEx.cs](CS/EFCore/TreeListInplaceEF/TreeListInplaceEF.Win/Controllers/TreeListAppearanceControllerEx.cs) 
+* [TreeListInplaceEditViewController.cs](CS/EFCore/TreeListInplaceEF/TreeListInplaceEF.Win/Controllers/TreeListInplaceEditViewController.cs) 
 <!-- default file list end -->
-# TreeListEditor - How to enable in-place editing in the WinForms tree List View (XPO)
+# TreeListEditor - How to enable in-place editing in the WinForms tree List View
 
 
 <p>This example shows how to implement a custom ViewController that gets access to the TreeList control and makes it editable according to the XtraTreeList documentation:<br>    <a href="https://documentation.devexpress.com/#WindowsForms/CustomDocument5599">WinForms Controls > Controls > Tree List > Feature Center > Data Editing</a><br>    <a href="https://documentation.devexpress.com/#WindowsForms/DevExpressXtraTreeListTreeListOptionsBehavior_Editabletopic">TreeListOptionsBehavior.Editable Property</a><br>    <a href="https://documentation.devexpress.com/#WindowsForms/DevExpressXtraTreeListTreeList_ShowingEditortopic">TreeList.ShowingEditor Event</a><br>    <a href="https://documentation.devexpress.com/#WindowsForms/DevExpressXtraTreeListTreeList_CellValueChangedtopic">TreeList.CellValueChanged Event</a><br>Take special note that this is not a complete solution and you will need to modify and test this example code further in other scenarios according to your business requirements. For instance, if you require supporting ConditionalAppearance rules, consider using the code from the <a href="https://www.devexpress.com/Support/Center/p/Q479878">Q479878</a> ticket. If you require supporting member-level security permissions, consider extending this example by analogy with the DevExpress.ExpressApp.Win.SystemModule.GridListEditorMemberLevelSecurityController class for GridListEditor.<br>Refer to the <a href="https://www.devexpress.com/Support/Center/p/S30514">Tree List Editors - How to edit data directly in the tree view (inplace / inline modifications)</a> thread to learn more about possible limitations and alternative solutions.</p>
