@@ -7,6 +7,7 @@
 # TreeListEditor - How to enable in-place editing in the WinForms tree List View
 
 This example shows how to enable in place editing for WinForms TreeList control. 
+![TreeListInplaceEF Win_gmXv5LULjX](https://github.com/DevExpress-Examples/XAF_treelisteditor-how-to-enable-in-place-editing-in-the-winforms-tree-list-view-e443/assets/14300209/b534e9ae-7c68-463b-99f5-2ab2ad475a2b)
 
 
 ## Implementation Details
