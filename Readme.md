@@ -4,9 +4,9 @@
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 
-# XAF WinForms - How to enable in-place editing in the tree List View (TreeListEditor)
+# XAF WinForms - How to enable in-place editing in the Tree List View (TreeListEditor)
 
-This example enables in-place editing for WinForms TreeList control.
+This example enables in-place editing for the WinForms TreeList control.
 
 ![TreeListInplaceEF Win_gmXv5LULjX](https://github.com/DevExpress-Examples/XAF_treelisteditor-how-to-enable-in-place-editing-in-the-winforms-tree-list-view-e443/assets/14300209/b534e9ae-7c68-463b-99f5-2ab2ad475a2b)
 
@@ -15,7 +15,7 @@ This example enables in-place editing for WinForms TreeList control.
 This example implements a custom View Controller ([TreeListInplaceEditViewController.cs](CS/EFCore/TreeListInplaceEF/TreeListInplaceEF.Win/Controllers/TreeListInplaceEditViewController.cs)). This controller gets access to the WinForms [TreeList](https://docs.devexpress.com/WindowsForms/2434/controls-and-libraries/tree-list) control and uses its API to make control data editable.
 
 > **Note**:
-> This example is not a complete solution. Thoroughly test, extend and modify its code to meet your business requirements.
+> This example is not a complete solution. Thoroughly test, extend, and modify its code to meet your business requirements.
 
 Possible limitations and alternative solutions:  [Tree List Editors - How to edit data directly in the tree view (inplace / inline modifications)](https://supportcenter.devexpress.com/ticket/details/s30514/tree-list-editors-how-to-edit-data-directly-in-the-tree-view-inplace-inline-modifications).
 
