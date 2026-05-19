@@ -14,7 +14,6 @@ public class TreeListInplaceWindowsFormsApplication : WinApplication {
 		SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         ApplicationName = "TreeListInplace";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
-        UseOldTemplates = false;
         DatabaseVersionMismatch += TreeListInplaceWindowsFormsApplication_DatabaseVersionMismatch;
         CustomizeLanguagesList += TreeListInplaceWindowsFormsApplication_CustomizeLanguagesList;
     }
