@@ -4,19 +4,25 @@ using DevExpress.ExpressApp.Win.Controls;
 using DevExpress.ExpressApp.Win.Editors;
 using DevExpress.XtraTreeList;
 
-namespace WinSolution.Module.Win {
-    public class TreeListAppearanceControllerEx : TreeListAppearanceController {
-        protected override void OnTreeListChanged() {
-            base.OnTreeListChanged();
-            if (base.Active.ResultValue && base.View != null && base.View.Editor != null && base.View.Editor is TreeListEditor && ((TreeListEditor)base.View.Editor).TreeList != null) {
-                ((TreeListEditor)base.View.Editor).TreeList.ShowingEditor += new System.ComponentModel.CancelEventHandler(control_ShowingEditor);
-            }
+namespace WinSolution.Module.Win;
+
+public class TreeListAppearanceControllerEx : TreeListAppearanceController {
+    protected override void OnTreeListChanged() {
+        base.OnTreeListChanged();
+        if(Active.ResultValue && View?.Editor is TreeListEditor treeListEditor && treeListEditor.TreeList != null) {
+            treeListEditor.TreeList.ShowingEditor += control_ShowingEditor;
         }
-        void control_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e) {
-            TreeList tl = (TreeList)sender;
-            ObjectTreeListNode node = tl.FocusedNode as ObjectTreeListNode;
-            if (node == null) return;
-            this.OnCustomizeAppearance(new CustomizeAppearanceEventArgs(tl.FocusedColumn.FieldName, "ViewItem", new GridViewCancelEventArgsAppearanceAdapter(null, e), node.Object, null));
+    }
+    protected override void UnsubscribeToListEditorEvent() {
+        if(View?.Editor is TreeListEditor treeListEditor && treeListEditor.TreeList != null) {
+            treeListEditor.TreeList.ShowingEditor -= control_ShowingEditor;
         }
+        base.UnsubscribeToListEditorEvent();
+    }
+    void control_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e) {
+        var tl = (TreeList)sender;
+        var node = tl.FocusedNode as ObjectTreeListNode;
+        if(node == null) return;
+        OnCustomizeAppearance(new CustomizeAppearanceEventArgs(tl.FocusedColumn.FieldName, "ViewItem", new GridViewCancelEventArgsAppearanceAdapter(null, e), node.Object, null));
     }
 }
